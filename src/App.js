@@ -7,6 +7,11 @@ import Drawer from './components/Drawer';
 //   { name: 'Вкладыш из серии 121-190', price: 358 }
 // ];
 
+const arr = [
+   "name: 'Вкладыш из серии 51-120', price: 435",  
+   "name: 'Вкладыш из серии 121-190', price: 358"
+];
+
 
 
 
@@ -17,7 +22,7 @@ function App() {
   return (
     <div className="wrapper clear">
         
-<Drawer />
+{/* <Drawer /> */}
 <Header />
 
   <div className="content p-40">
@@ -34,15 +39,48 @@ function App() {
          {arr.map((obj) => (
           <p>{obj.name}</p>
          ))}
-         
+          
          </div> */}
 
+      
+
+         
+
+        {/* <Card />
         <Card />
         <Card />
-        <Card />
-        <Card />
+        <Card /> */}
 
     </div>
+
+
+          <div className='d-flex'>
+            <Card
+              title='Вкладыш 555(51-640)'
+              price={543}
+              imageUrl="./img/wrappers/0002.jpg"
+            />
+
+            <Card
+              title='Вкладыш 65(51-640)'
+              price={503}
+              imageUrl="./img/wrappers/0001.jpg"
+            />
+
+            <Card
+              title='Вкладыш 25(51-640)'
+              price={903}
+              imageUrl="./img/wrappers/0002.jpg"
+            />
+
+            
+
+
+            {/* {arr.map((obj) => (
+            <Card />
+            ))}; */}
+          </div>
+
       ...
   </div>
 </div>
