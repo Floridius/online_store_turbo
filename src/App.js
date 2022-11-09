@@ -1,26 +1,47 @@
+import React from 'react';
 import Card from './components/Card';
 import Header from './components/Header';
 import Drawer from './components/Drawer';
 
-// const arr = [
-//   { name: 'Вкладыш из серии 51-120', price: 435 }
-//   { name: 'Вкладыш из серии 121-190', price: 358 }
-// ];
-
 const arr = [
-   "name: 'Вкладыш из серии 51-120', price: 435",  
-   "name: 'Вкладыш из серии 121-190', price: 358"
+   {name: 'Вкладыш из серии 121-3222', 
+    price: 500, 
+    imageUrl: '/img/wrappers/0001.jpg', },
+
+    {name: 'Вкладыш из серии 41-888', 
+    price: 43, 
+    imageUrl: '/img/wrappers/0002.jpg', },
+
+    {name: 'Вкладыш из серии 81-777', 
+    price: 581, 
+    imageUrl: '/img/wrappers/0001.jpg', },
+
+    {name: 'Вкладыш из серии 1-190', 
+    price: 999, 
+    imageUrl: '/img/wrappers/0002.jpg', },
+
 ];
 
-
-
-
-
 function App() {
+  const [count, setCount] = React.useState(5);
+
+    const plus = () => {
+      setCount(count + 1);
+    };
+
+    const minus = () => {
+      setCount(count - 1);
+    }
 
 
   return (
-    <div className="wrapper clear">
+<div className="wrapper clear">
+<center><div>
+        <h1>{count}</h1>
+        <button onClick={plus}>+</button>
+        <button onClick={() => minus()}>-</button>
+      </div>
+      </center> 
         
 {/* <Drawer /> */}
 <Header />
@@ -54,34 +75,19 @@ function App() {
     </div>
 
 
-          <div className='d-flex'>
-            <Card
-              title='Вкладыш 555(51-640)'
-              price={543}
-              imageUrl="./img/wrappers/0002.jpg"
-            />
+        <div className='d-flex'>
+          {arr.map((obj) => (
+             <Card
+             title={obj.name}
+             price={obj.price}
+             imageUrl={obj.imageUrl}
+             onFavorite={() => console.log('Добавлено в Избранное')}
+             onPlus={() => console.log('Добавлено в Корзину')}
+           />
+            ))}
+        </div>
 
-            <Card
-              title='Вкладыш 65(51-640)'
-              price={503}
-              imageUrl="./img/wrappers/0001.jpg"
-            />
-
-            <Card
-              title='Вкладыш 25(51-640)'
-              price={903}
-              imageUrl="./img/wrappers/0002.jpg"
-            />
-
-            
-
-
-            {/* {arr.map((obj) => (
-            <Card />
-            ))}; */}
-          </div>
-
-      ...
+      ...texttttttt
   </div>
 </div>
   );
