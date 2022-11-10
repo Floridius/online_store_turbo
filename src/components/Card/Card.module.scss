@@ -6,7 +6,9 @@
     margin-right: 40px;
     transition: box-shadow 0,15s ease-in-out, transform 0.2s ease-in-out;
     
-
+    .plus {
+        cursor: pointer;
+    }
 
     &:hover {
         box-shadow: 10px 24px 50px rgb(0, 0, 0, 0.09);
